@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sales Submission Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .footer {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+    .about {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header Section -->
+  <header class="container text-center">
+    <h1>Submit Your Sales Information</h1>
+    <p>Fill out the form below to forward your sales and other information.</p>
+  </header>
+  
+  <!-- Sales Submission Form -->
+  <div class="container">
+    <form target="_blank" action="https://formsubmit.co/Cyberslueth@consultant.com" method="POST" enctype="multipart/form-data">
+      
+      <!-- Full Name and Email -->
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col">
+            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+          </div>
+          <div class="col">
+            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sales Message -->
+      <div class="form-group">
+        <textarea placeholder="Your Sales Information" class="form-control" name="message" rows="10" required></textarea>
+      </div>
+      
+      <!-- File Upload -->
+      <div class="form-group">
+        <label for="attachment">Upload an image (PNG, JPEG):</label>
+        <input type="file" name="attachment" class="form-control" accept="image/png, image/jpeg">
+      </div>
+      
+      <!-- Hidden Fields -->
+      <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html">
+      <input type="hidden" name="_subject" value="New Sales Submission!">
+      <input type="hidden" name="_cc" value="another@email.com,yetanother@email.com">
+      <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_honey" style="display:none">
+      <input type="hidden" name="_autoresponse" value="Thank you for your submission! We'll get back to you soon.">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_webhook" value="https://yourdomain.co/your-webhook">
+      
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+    </form>
+  </div>
+  
+  <!-- About Section -->
+  <section class="about container">
+    <h2>About Our Sales Submission Form</h2>
+    <p>This form allows you to securely forward your sales details, inquiries, or any other relevant information. Our team will review your submission and get back to you shortly.</p>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Cyberslueth | All rights reserved</p>
+    <p><a href="mailto:Cyberslueth@consultant.com">Contact Us</a></p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
