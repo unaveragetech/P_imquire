@@ -9,7 +9,19 @@ This repository offers a customizable order form template for businesses looking
 
 **GitHub Pages is NOT meant to serve as a free web-hosting platform for running an online business, e-commerce site, or any website primarily facilitating commercial transactions.** It is also prohibited from being used for sensitive transactions such as submitting passwords or credit card numbers.
 
-**Using this site while hosted here is a direct violation of GitHub's Prohibited Uses policy.**
+**Using this site while hosted here is a direct violation of GitHub's Prohibited Uses policy.** While its okay to build and submit information activle running any type of scheme to gain monitary vailue is a direct violation of git tos and the purpose of this repo on git
+```
+TLDR__ HOST ELSE WHERE__TLDR
+```
+```
+TLDR__ HOST ELSE WHERE__TLDR
+``````
+TLDR__ HOST ELSE WHERE__TLDR
+``````
+TLDR__ HOST ELSE WHERE__TLDR
+``````
+TLDR__ HOST ELSE WHERE__TLDR
+```
 
 **Prohibited Uses Include:**
 - Running an online business or e-commerce store.
