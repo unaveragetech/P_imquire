@@ -17,7 +17,7 @@ This repository provides a simple, customizable order form template for users wh
 Clone this repository to your local machine to begin working with the template.
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone [https://github.com/unaveragetech/P_imquire.git]
 cd your-repo-name
 ```
 
@@ -81,6 +81,3 @@ This template should be **extensively modified** before deployment. Some key are
 
 This template is open-source and free to use for any personal or commercial project. However, it must be customized to fit your business and legal requirements.
 
----
-
-This README provides a starting point for users to understand how the template works, while also giving them the flexibility to modify it for their unique needs. Let me know if you'd like to adjust anything!
