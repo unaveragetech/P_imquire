@@ -52,6 +52,8 @@ going forward-->>
 5. [License](#license)
 
 ---
+you can make branded and short links here for better looking redirects 
+__https://app.short.io/__
 
 ## Features
 
