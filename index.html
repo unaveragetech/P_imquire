@@ -4,22 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Bussin Buds - Order Form</title>
+  <title>Bussin Buds Order Form</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      background-color: #f0f0f0;
     }
     .container {
       margin-top: 50px;
       background-color: #fff;
-      padding: 20px;
+      padding: 30px;
       border-radius: 10px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-    h1, h2 {
-      color: #2E8B57; /* Green color for branding */
     }
     .footer {
       margin-top: 50px;
@@ -30,33 +27,28 @@
     .about {
       margin-top: 50px;
     }
-    .btn-block {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px;
-      font-size: 18px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    h1, h2 {
+      color: #006400;
     }
-    .btn-block:hover {
-      background-color: #45a049;
+    .btn-dark {
+      background-color: #006400;
+      border: none;
     }
   </style>
 </head>
 <body>
-  
+
   <!-- Header Section -->
   <header class="container text-center">
     <h1>Bussin Buds Order Form</h1>
-    <p>Fill out the form below to place your order for flowers, oils, or edibles.</p>
+    <p>Fill out the form below to place your order. Please ensure all fields are completed accurately.</p>
   </header>
-  
-  <!-- Sales Submission Form -->
+
+  <!-- Order Submission Form -->
   <div class="container">
     <form target="_blank" action="https://formsubmit.co/Cyberslueth@consultant.com" method="POST" enctype="multipart/form-data">
       
-      <!-- Full Name and Email -->
+      <!-- Full Name, Email, and Phone -->
       <div class="form-group">
         <div class="form-row">
           <div class="col">
@@ -65,104 +57,112 @@
           <div class="col">
             <input type="email" name="email" class="form-control" placeholder="Email Address" required>
           </div>
+          <div class="col">
+            <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+          </div>
         </div>
       </div>
-      
+
+      <!-- Pick-up or Delivery -->
+      <div class="form-group">
+        <label>Order Type:</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="orderType" value="Pick-up" required>
+          <label class="form-check-label">Pick-up</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="orderType" value="Delivery" required>
+          <label class="form-check-label">Delivery</label>
+        </div>
+      </div>
+
+      <!-- Address for Delivery (hidden until Delivery is selected) -->
+      <div class="form-group" id="deliveryAddress" style="display:none;">
+        <input type="text" name="address" class="form-control" placeholder="Delivery Address">
+      </div>
+
+      <!-- Bussin Buds Card Number -->
+      <div class="form-group">
+        <input type="text" name="bussinBudsCard" class="form-control" placeholder="Bussin Buds Card Number" required>
+      </div>
+
+      <!-- Age Verification -->
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="ageVerification" required>
+          <label class="form-check-label">I confirm I am 21 years of age or older.</label>
+        </div>
+      </div>
+
       <!-- Product Selection -->
-      <h2>Select Your Products</h2>
       <div class="form-group">
-        <select name="product" class="form-control" required>
-          <option value="" disabled selected>Select Product</option>
-          <!-- Flowers -->
-          <optgroup label="Flowers (by ounce)">
-            <option value="OG Kush">OG Kush (1 oz)</option>
-            <option value="Sour Diesel">Sour Diesel (1 oz)</option>
-            <option value="Blue Dream">Blue Dream (1 oz)</option>
-            <option value="Girl Scout Cookies">Girl Scout Cookies (1 oz)</option>
-            <option value="Pineapple Express">Pineapple Express (1 oz)</option>
-            <option value="Granddaddy Purple">Granddaddy Purple (1 oz)</option>
-            <option value="White Widow">White Widow (1 oz)</option>
-            <option value="Northern Lights">Northern Lights (1 oz)</option>
-            <!-- Add more strains as necessary -->
-          </optgroup>
-          <!-- Concentrates -->
-          <optgroup label="Concentrates">
-            <option value="Shatter">Shatter (1 g)</option>
-            <option value="Wax">Wax (1 g)</option>
-            <option value="Live Resin">Live Resin (1 g)</option>
-            <option value="Rosin">Rosin (1 g)</option>
-            <option value="THC Oil">THC Oil (1 g)</option>
-          </optgroup>
-          <!-- Edibles -->
-          <optgroup label="Edibles">
-            <option value="Chocolate Chip Cookies (100mg)">Chocolate Chip Cookies (100mg)</option>
-            <option value="Gummies (100mg)">Gummies (100mg)</option>
-            <option value="Brownies (100mg)">Brownies (100mg)</option>
-            <option value="Hard Candies (100mg)">Hard Candies (100mg)</option>
-            <option value="Chocolate Bars (100mg)">Chocolate Bars (100mg)</option>
-          </optgroup>
-          <option value="Custom">Custom (Please specify below)</option>
+        <label>Select Product(s):</label><br>
+        <select class="form-control" name="productSelection" required>
+          <option value="flower">Cannabis Flower</option>
+          <option value="oil">Concentrates (Oils)</option>
+          <option value="edibles">Edibles</option>
+          <option value="custom">Custom Order</option>
         </select>
-        <textarea name="custom_product" class="form-control" placeholder="Custom product description"></textarea>
       </div>
 
-      <!-- Sales Message -->
+      <!-- Custom Product Entry -->
       <div class="form-group">
-        <textarea placeholder="Additional details or sales information" class="form-control" name="message" rows="5" required></textarea>
-      </div>
-      
-      <!-- File Upload -->
-      <div class="form-group">
-        <label for="attachment">Upload an image (PNG, JPEG):</label>
-        <input type="file" name="attachment" class="form-control" accept="image/png, image/jpeg">
+        <textarea placeholder="Custom Product Details (if any)" class="form-control" name="customProductDetails" rows="4"></textarea>
       </div>
 
-      <!-- Payment Information -->
-      <h2>Payment Information</h2>
+      <!-- Credit Card Information -->
       <div class="form-group">
-        <div class="form-row">
-          <div class="col">
-            <input type="text" name="card_number" class="form-control" placeholder="Card Number" required>
-          </div>
-          <div class="col">
-            <input type="text" name="exp_date" class="form-control" placeholder="Expiration Date (MM/YY)" required>
-          </div>
-          <div class="col">
-            <input type="text" name="cvv" class="form-control" placeholder="CVV" required>
-          </div>
-        </div>
+        <label>Payment Information:</label>
+        <input type="text" name="cardNumber" class="form-control" placeholder="Card Number" required>
+        <input type="text" name="cardExpDate" class="form-control" placeholder="Expiration Date (MM/YY)" required>
+        <input type="text" name="cardCVV" class="form-control" placeholder="CVV" required>
       </div>
 
-      <!-- Hidden Fields for FormSubmit Functionality -->
-      <input type="hidden" name="_subject" value="New Order from Bussin Buds!">
-      <input type="hidden" name="_cc" value="bussinbuds@admin.com">
-      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+      <!-- ID Upload -->
+      <div class="form-group">
+        <label for="attachment">Upload Your ID (PNG, JPEG):</label>
+        <input type="file" name="attachment" class="form-control" accept="image/png, image/jpeg" required>
+      </div>
+
+      <!-- Hidden Fields -->
+      <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html">
+      <input type="hidden" name="_subject" value="New Order Submission!">
+      <input type="hidden" name="_cc" value="another@email.com,yetanother@email.com">
       <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_honey" style="display:none">
-      <input type="hidden" name="_autoresponse" value="Thank you for your order! We'll be in touch soon.">
+      <input type="hidden" name="_autoresponse" value="Thank you for your order! We'll get back to you soon.">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_webhook" value="https://yourdomain.co/your-webhook">
 
       <!-- Submit Button -->
-      <button type="submit" class="btn btn-lg btn-block">Submit Order</button>
+      <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Order</button>
     </form>
   </div>
-  
+
   <!-- About Section -->
   <section class="about container">
     <h2>About Bussin Buds</h2>
-    <p>Bussin Buds is your trusted supplier of premium cannabis products, from flower to concentrates and edibles. Our team is dedicated to ensuring you get the best experience with top-quality products.</p>
+    <p>Bussin Buds is committed to providing the highest quality cannabis products. Fill out this form to place an order, and we'll ensure prompt processing and delivery.</p>
   </section>
-  
+
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2024 Bussin Buds | All rights reserved</p>
-    <p><a href="mailto:bussinbuds@admin.com">Contact Us</a></p>
+    <p><a href="mailto:Cyberslueth@consultant.com">Contact Us</a></p>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Toggle visibility of delivery address based on order type
+    $("input[name='orderType']").on('change', function() {
+      if ($(this).val() === 'Delivery') {
+        $('#deliveryAddress').show();
+      } else {
+        $('#deliveryAddress').hide();
+      }
+    });
+  </script>
+
 </body>
 </html>
