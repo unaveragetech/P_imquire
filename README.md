@@ -15,24 +15,29 @@ TLDR__ HOST ELSE WHERE__TLDR
 ```
 ```
 TLDR__ HOST ELSE WHERE__TLDR
-``````
-TLDR__ HOST ELSE WHERE__TLDR
-``````
-TLDR__ HOST ELSE WHERE__TLDR
-``````
+```
+```
 TLDR__ HOST ELSE WHERE__TLDR
 ```
-
+```
+TLDR__ HOST ELSE WHERE__TLDR
+```
+```
+TLDR__ HOST ELSE WHERE__TLDR
+```
+```
 **Prohibited Uses Include:**
 - Running an online business or e-commerce store.
 - Facilitating commercial software as a service (SaaS).
 - Sending or processing sensitive information such as credit card numbers or personal passwords.
 - Engaging in get-rich-quick schemes, posting sexually explicit content, or encouraging violent or threatening behavior.
-
+```
 **Please thoroughly research hosting options and ensure compliance with all relevant laws and terms before collecting any user information.**
+```
 ---
 going forward-->>
-
+---
+```
 ## Table of Contents
 
 1. [Features](#features)
