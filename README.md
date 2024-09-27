@@ -62,6 +62,9 @@ going forward-->>
 
 - cant code, no problem.. we can solve that
 https://unaveragetech.github.io/P_imquire/builder
+
+example page (no orders accepted)
+https://unaveragetech.github.io/P_imquire/
 ---
 
 ## Usage
