@@ -1,6 +1,5 @@
 # Upfront Order Form Template
 
-Here's a more upfront and open rewrite of the text, with added emphasis and a disclaimer:
 
 ---
 
