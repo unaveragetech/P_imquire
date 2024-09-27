@@ -18,7 +18,7 @@ Clone this repository to your local machine to begin working with the template.
 
 ```bash
 git clone [https://github.com/unaveragetech/P_imquire.git]
-cd your-repo-name
+cd P_imquire
 ```
 
 ### Step 2: Modify the Template
