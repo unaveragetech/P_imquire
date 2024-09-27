@@ -1,168 +1,227 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+  <base href="https://bussinherbz.com/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Bussin Buds - Order Form</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Bussin' Buds - Extreme Herb Enthusiasts</title>
   <style>
+    :root {
+      --primary-color: #00ff00;
+      --secondary-color: #ff00ff;
+      --text-color: #ffffff;
+      --background-color: #000000;
+      --accent-color: #ffff00;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      overflow-x: hidden;
     }
+
     .container {
-      margin-top: 50px;
-      background-color: #fff;
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
-    h1, h2 {
-      color: #2E8B57; /* Green color for branding */
-    }
-    .footer {
-      margin-top: 50px;
-      padding: 20px;
-      background-color: #f8f9fa;
+
+    header {
       text-align: center;
+      padding: 40px 0;
     }
-    .about {
+
+    h1 {
+      font-size: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      animation: rainbow 5s linear infinite;
+    }
+
+    @keyframes rainbow {
+      0% { color: var(--primary-color); }
+      33% { color: var(--secondary-color); }
+      66% { color: var(--accent-color); }
+      100% { color: var(--primary-color); }
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 10px;
+    }
+
+    nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border: 2px solid var(--primary-color);
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: var(--primary-color);
+      color: var(--background-color);
+      transform: scale(1.1);
+    }
+
+    .hero {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      background-color: var(--primary-color);
+      color: var(--background-color);
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 255, 0, 0.3);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
       margin-top: 50px;
     }
-    .btn-block {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px;
-      font-size: 18px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+
+    .product-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
     }
-    .btn-block:hover {
-      background-color: #45a049;
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 255, 0, 0.2);
+    }
+
+    .order-section {
+      margin-top: 50px;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+    }
+
+    .submit-btn {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: var(--primary-color);
+      color: var(--background-color);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 255, 0, 0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      margin-top: 50px;
+      border-top: 2px solid var(--primary-color);
     }
   </style>
 </head>
+
 <body>
-  
-  <!-- Header Section -->
-  <header class="container text-center">
-    <h1>Bussin Buds Order Form</h1>
-    <p>Fill out the form below to place your order for flowers, oils, or edibles.</p>
-  </header>
-  
-  <!-- Sales Submission Form -->
   <div class="container">
-    <form target="_blank" action="https://formsubmit.co/Cyberslueth@consultant.com" method="POST" enctype="multipart/form-data">
-      
-      <!-- Full Name and Email -->
-      <div class="form-group">
-        <div class="form-row">
-          <div class="col">
-            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-          </div>
-          <div class="col">
-            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-          </div>
+    <header>
+      <h1 class="glitch-effect" data-text="Bussin' Buds">Bussin' Buds</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <h2>Experience the Dankest Herbs</h2>
+        <a href="#products" class="cta-button">Shop Now</a>
+      </section>
+
+      <section class="products" id="products">
+        <div class="product-card">
+          <h3>OG Kush</h3>
+          <p class="product-price">$420.69</p>
         </div>
-      </div>
-      
-      <!-- Product Selection -->
-      <h2>Select Your Products</h2>
-      <div class="form-group">
-        <select name="product" class="form-control" required>
-          <option value="" disabled selected>Select Product</option>
-          <!-- Flowers -->
-          <optgroup label="Flowers (by ounce)">
-            <option value="OG Kush">OG Kush (1 oz)</option>
-            <option value="Sour Diesel">Sour Diesel (1 oz)</option>
-            <option value="Blue Dream">Blue Dream (1 oz)</option>
-            <option value="Girl Scout Cookies">Girl Scout Cookies (1 oz)</option>
-            <option value="Pineapple Express">Pineapple Express (1 oz)</option>
-            <option value="Granddaddy Purple">Granddaddy Purple (1 oz)</option>
-            <option value="White Widow">White Widow (1 oz)</option>
-            <option value="Northern Lights">Northern Lights (1 oz)</option>
-            <!-- Add more strains as necessary -->
-          </optgroup>
-          <!-- Concentrates -->
-          <optgroup label="Concentrates">
-            <option value="Shatter">Shatter (1 g)</option>
-            <option value="Wax">Wax (1 g)</option>
-            <option value="Live Resin">Live Resin (1 g)</option>
-            <option value="Rosin">Rosin (1 g)</option>
-            <option value="THC Oil">THC Oil (1 g)</option>
-          </optgroup>
-          <!-- Edibles -->
-          <optgroup label="Edibles">
-            <option value="Chocolate Chip Cookies (100mg)">Chocolate Chip Cookies (100mg)</option>
-            <option value="Gummies (100mg)">Gummies (100mg)</option>
-            <option value="Brownies (100mg)">Brownies (100mg)</option>
-            <option value="Hard Candies (100mg)">Hard Candies (100mg)</option>
-            <option value="Chocolate Bars (100mg)">Chocolate Bars (100mg)</option>
-          </optgroup>
-          <option value="Custom">Custom (Please specify below)</option>
-        </select>
-        <textarea name="custom_product" class="form-control" placeholder="Custom product description"></textarea>
-      </div>
-
-      <!-- Sales Message -->
-      <div class="form-group">
-        <textarea placeholder="Additional details or sales information" class="form-control" name="message" rows="5" required></textarea>
-      </div>
-      
-      <!-- File Upload -->
-      <div class="form-group">
-        <label for="attachment">Upload an image (PNG, JPEG):</label>
-        <input type="file" name="attachment" class="form-control" accept="image/png, image/jpeg">
-      </div>
-
-      <!-- Payment Information -->
-      <h2>Payment Information</h2>
-      <div class="form-group">
-        <div class="form-row">
-          <div class="col">
-            <input type="text" name="card_number" class="form-control" placeholder="Card Number" required>
-          </div>
-          <div class="col">
-            <input type="text" name="exp_date" class="form-control" placeholder="Expiration Date (MM/YY)" required>
-          </div>
-          <div class="col">
-            <input type="text" name="cvv" class="form-control" placeholder="CVV" required>
-          </div>
+        <div class="product-card">
+          <h3>Purple Haze</h3>
+          <p class="product-price">$369.42</p>
         </div>
-      </div>
+      </section>
 
-      <!-- Hidden Fields for FormSubmit Functionality -->
-      <input type="hidden" name="_subject" value="New Order from Bussin Buds!">
-      <input type="hidden" name="_cc" value="bussinbuds@admin.com">
-      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-      <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_honey" style="display:none">
-      <input type="hidden" name="_autoresponse" value="Thank you for your order! We'll be in touch soon.">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_webhook" value="https://yourdomain.co/your-webhook">
+      <section id="order" class="order-section">
+        <h2>Place Your Order</h2>
+        <form id="order-form" class="order-form" action="https://formsubmit.co/YOUREMAIL@example.com" method="POST">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="product">Product:</label>
+            <select id="product" name="product" required>
+              <option value="og-kush">OG Kush</option>
+              <option value="purple-haze">Purple Haze</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn">Submit Order</button>
+        </form>
+      </section>
+    </main>
 
-      <!-- Submit Button -->
-      <button type="submit" class="btn btn-lg btn-block">Submit Order</button>
-    </form>
+    <footer>
+      <p>&copy; 2023 Bussin' Buds. All rights reserved.</p>
+    </footer>
   </div>
-  
-  <!-- About Section -->
-  <section class="about container">
-    <h2>About Bussin Buds</h2>
-    <p>Bussin Buds is your trusted supplier of premium cannabis products, from flower to concentrates and edibles. Our team is dedicated to ensuring you get the best experience with top-quality products.</p>
-  </section>
-  
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2024 Bussin Buds | All rights reserved</p>
-    <p><a href="mailto:bussinbuds@admin.com">Contact Us</a></p>
-  </footer>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Add any JS or additional effects if needed
+  </script>
 </body>
 </html>
