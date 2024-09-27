@@ -83,13 +83,19 @@
   </style></head><body>
 
   <!-- Header Section -->
-  <header class="container text-center">
-    <svg class="cannabis-leaf floating" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 0 C60 20 80 20 90 10 C80 30 80 50 90 70 C70 60 50 70 50 90 C50 70 30 60 10 70 C20 50 20 30 10 10 C20 20 40 20 50 0 Z"/>
-    </svg>
-    <h1 class="display-4">Bussin Buds Order Form</h1>
-    <p class="lead">Experience premium cannabis delivered right to your doorstep. Fill out the form below to place your order.</p>
-  </header>
+<header class="container text-center mb-5">
+  <svg class="cannabis-leaf floating" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 0 C60 20 80 20 90 10 C80 30 80 50 90 70 C70 60 50 70 50 90 C50 70 30 60 10 70 C20 50 20 30 10 10 C20 20 40 20 50 0 Z"/>
+  </svg>
+  <h1 class="display-4">Bussin Buds Order Form</h1>
+  <p class="lead">Experience premium cannabis delivered right to your doorstep. Fill out the form below to place your order.</p>
+  
+  <div class="mt-4">
+    <p>At Bussin Buds, we are dedicated to providing you with an exceptional selection of cannabis products. Our team is committed to ensuring that you receive only the highest quality items that meet your needs. Whether you’re a seasoned connoisseur or a first-time user, we are here to guide you through every step of the ordering process.</p>
+    <p>Your satisfaction is our priority, and we strive to maintain compliance with all regulations to ensure a safe and enjoyable experience. Thank you for choosing Bussin Buds!</p>
+  </div>
+</header>
+
 
   <!-- Order Submission Form -->
   <div class="container">
@@ -155,18 +161,38 @@
         </div>
       </div>
 
-      <!-- Product Selection -->
-      <div class="mb-4">
-        <div class="form-floating">
-          <select class="form-select" name="productSelection" id="floatingSelect" required>
-            <option value="flower">Cannabis Flower</option>
-            <option value="oil">Concentrates (Oils)</option>
-            <option value="edibles">Edibles</option>
-            <option value="custom">Custom Order</option>
-          </select>
-          <label for="floatingSelect"><i class="fas fa-cannabis"></i> Select Product(s)</label>
-        </div>
-      </div>
+     <!-- Product Selection -->
+<div class="mb-4">
+  <div class="form-floating">
+    <select class="form-select" name="productSelection" id="floatingSelect" required>
+      <option value="" disabled selected>Select your product type</option>
+      <option value="flower">Cannabis Flower</option>
+      <option value="oil">Concentrates (Oils)</option>
+      <option value="edibles">Edibles</option>
+      <option value="custom">Custom Order</option>
+    </select>
+    <label for="floatingSelect"><i class="fas fa-cannabis"></i> Select Product(s)</label>
+  </div>
+  <p class="mt-2">Choose from a diverse range of premium cannabis products tailored to meet your preferences:</p>
+  
+  <ul class="list-group mt-2">
+    <li class="list-group-item">
+      <strong>Cannabis Flower:</strong> Our selection of cannabis flower features a variety of strains, each with unique flavor profiles and effects. Whether you’re looking for something energizing, relaxing, or somewhere in between, our expertly curated strains are sure to satisfy your needs.
+    </li>
+    <li class="list-group-item">
+      <strong>Concentrates (Oils):</strong> Explore our high-quality concentrates, including oils and tinctures, known for their potency and purity. These products are perfect for those seeking a more intense experience and can be used in various ways, including sublingually or in vape pens.
+    </li>
+    <li class="list-group-item">
+      <strong>Edibles:</strong> Indulge in our delicious edibles, from gummies to baked goods, that offer a flavorful way to enjoy cannabis. Each edible is crafted with care, ensuring consistent dosing and delightful taste, perfect for those who prefer a sweet treat.
+    </li>
+    <li class="list-group-item">
+      <strong>Custom Order:</strong> If you have specific preferences or requirements, our custom order option allows you to tailor your experience. Let us know your desired products or specifications, and our team will do their best to accommodate your needs.
+    </li>
+  </ul>
+
+  <p class="mt-2">Feel free to reach out to our knowledgeable staff for assistance in selecting the right product for your needs. We’re here to help ensure you have the best experience possible!</p>
+</div>
+
 
       <!-- Custom Product Entry -->
       <div class="mb-4">
@@ -225,12 +251,21 @@
     </form>
   </div>
 
-  <!-- About Section -->
-  <section class="about container mt-5">
-    <h2><i class="fas fa-leaf"></i> About Bussin Buds</h2>
-    <p class="lead">At Bussin Buds, we're passionate about delivering premium cannabis products right to your doorstep. Our commitment to quality, variety, and customer satisfaction sets us apart in the industry. From carefully curated strains to expertly crafted edibles, we ensure that every product meets our high standards.</p>
-    <p>Fill out this form to place an order, and we'll ensure prompt processing and delivery Please ensure validity in your information as its used in fulfilling your order . Your satisfaction and safety are our top priorities.</p>
-  </section>
+ 
+ <!-- About Section -->
+<section class="about container mt-5">
+  <h2><i class="fas fa-leaf"></i> About Bussin Buds</h2>
+  <p class="lead">At Bussin Buds, we're dedicated to delivering premium cannabis products right to your doorstep. Our passion for quality, variety, and customer satisfaction is what sets us apart in this ever-evolving industry. Each product in our collection, from carefully curated strains to expertly crafted edibles, undergoes rigorous quality checks to ensure that it meets our high standards and exceeds your expectations.</p>
+
+  <p>We understand that the cannabis experience is unique for everyone, which is why we offer a diverse range of products designed to cater to different preferences and needs. Whether you are a seasoned connoisseur or a first-time user, our knowledgeable team is here to guide you in selecting the right products. We believe that education is key, so we strive to provide information about our products, their effects, and responsible usage practices.</p>
+
+  <p>At Bussin Buds, we are unwavering in our commitment to operating within the legal framework governing cannabis sales. We carefully adhere to all local, state, and federal regulations, ensuring that our business practices are not only lawful but also ethical. This dedication helps protect our customers, our community, and the integrity of our industry. By promoting responsible cannabis consumption, we aim to foster a safe and enjoyable environment for all who choose to shop with us.</p>
+
+  <p>To further enhance your experience, we utilize trusted third-party delivery services known for their reliability and professionalism. Our delivery partners are specifically trained to handle cannabis products with care, ensuring that every order is transported safely and discreetly. We take your privacy seriously, and our delivery process is designed to maintain confidentiality while providing prompt service. Our goal is to make your shopping experience seamless from start to finish, allowing you to enjoy your favorite products without any hassle.</p>
+
+  <p>We also value customer feedback and continuously seek ways to improve our services. Your satisfaction is our top priority, and we encourage you to reach out with any questions or suggestions. Fill out this form to place an order, and we will ensure prompt processing and delivery. Please ensure the validity of your information, as it is crucial for fulfilling your order. Join us on our journey to redefine the cannabis experience, and thank you for choosing Bussin Buds!</p>
+</section>
+
 
   <!-- Footer -->
   <footer class="footer mt-5">
