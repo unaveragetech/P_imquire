@@ -1,34 +1,42 @@
-name: Deploy to GitHub Pages
+name: Deploy GitHub Pages
 
+# Trigger the workflow on push to main or on changes to the GitHub Pages files
 on:
   push:
     branches:
-      - main  # This triggers the workflow when changes are pushed to the main branch
-  workflow_dispatch:  # Allows you to trigger this workflow manually from GitHub Actions UI
+      - main
+    paths:
+      - '**.html'   # Only trigger if HTML files change
+      - '**.css'
+      - '**.js'
+      - README.md
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the latest code from the repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    # Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      # Step 2: Setup Node.js environment (only if you have build steps; remove if not needed)
-      # This is optional and only necessary if you're using Node.js or npm to build the website.
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: '18'
+    # Set up Node.js to use GitHub Pages tools
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
 
-      # Step 3: Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # Token used for authentication (provided automatically by GitHub Actions)
-          publish_dir: ./  # The directory where your HTML files are located. For subdirectories, modify this path accordingly.
+    # Install dependencies, if any (optional, remove if unnecessary)
+    # Uncomment this if you have a package.json for building files
+    # - name: Install dependencies
+    #   run: npm install
 
-      # Optional: Add a step for any custom build processes (like minifying HTML, etc.)
-      # - name: Build the site
-      #   run: npm run build  # Adjust based on your build process
+    # Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./  # Root directory where your HTML content is
