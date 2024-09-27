@@ -1,168 +1,696 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Bussin Buds Order Form</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
+<html><head><base href="https://websimcreationengine.com/"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Bussin Buds - Premium Cannabis Order Form</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>
+    :root {
+      --primary-color: #006400;
+      --secondary-color: #4CAF50;
+      --accent-color: #8BC34A;
+      --text-color: #333;
+      --bg-color: #F5F5F5;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--bg-color) 0%, var(--accent-color) 100%);
+      background-attachment: fixed;
+      color: var(--text-color);
     }
+    
     .container {
+      max-width: 800px;
       margin-top: 50px;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin-left: 270px;
     }
+
+    .sales-sidebar {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 250px;
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .sales-list, .promo-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sales-list li, .promo-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    h1, h2 {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    .form-control:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+    }
+
     .footer {
       margin-top: 50px;
       padding: 20px;
-      background-color: #f8f9fa;
+      background-color: var(--primary-color);
+      color: #fff;
       text-align: center;
     }
-    .about {
-      margin-top: 50px;
+
+    .footer a {
+      color: var(--accent-color);
     }
-    h1, h2 {
-      color: #006400;
+
+    .cannabis-leaf {
+      fill: var(--primary-color);
+      width: 50px;
+      height: 50px;
+      margin-bottom: 20px;
     }
-    .btn-dark {
-      background-color: #006400;
-      border: none;
+
+    .form-check-input:checked {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
     }
-  </style>
-</head>
-<body>
+
+    .custom-file-label::after {
+      content: "Browse";
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    body.dark-mode {
+      --primary-color: #00A000;
+      --secondary-color: #60DF60;
+      --accent-color: #A0FF70;
+      --text-color: #E0E0E0;
+      --bg-color: #222;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 250px;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .product-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .product-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dark-mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .toggle-checkbox {
+      display: none;
+    }
+
+    .toggle-label {
+      cursor: pointer;
+      padding: 10px;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      color: white;
+      font-size: 20px;
+    }
+
+    .toggle-label .fa-sun {
+      display: inline-block;
+    }
+
+    .toggle-label .fa-moon {
+      display: none;
+    }
+
+    body.dark-mode .toggle-label .fa-sun {
+      display: none;
+    }
+
+    body.dark-mode .toggle-label .fa-moon {
+      display: inline-block;
+    }
+
+    .cannabis-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.05;
+      z-index: -1;
+    }
+
+    #adminWindow {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      z-index: 1000;
+    }
+
+    #adminWindow button {
+      margin: 5px;
+    }
+
+    #adminProductList li {
+      margin-bottom: 5px;
+    }
+
+    .best-sellers .card {
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .best-sellers .card:hover {
+      transform: translateY(-5px);
+    }
+  </style></head><body>
+
+  <!-- Sidebar Section -->
+  <div class="sidebar">
+    <h3>Our Products</h3>
+    <ul class="product-list">
+      <li>OG Kush</li>
+      <li>Blue Dream</li>
+      <li>Sour Diesel</li>
+      <li>Girl Scout Cookies</li>
+      <li>Purple Haze</li>
+      <li>White Widow</li>
+    </ul>
+  </div>
+
+  <div class="sales-sidebar">
+    <h3>Sales & Discounts</h3>
+    <ul class="sales-list">
+      <li>Summer Sale: 20% off all edibles</li>
+      <li>Buy 2 Get 1 Free on OG Kush</li>
+      <li>First-time customer discount: 15% off</li>
+    </ul>
+    <h4>In-store Promotions</h4>
+    <ul class="promo-list">
+      <li>Free rolling papers with $50+ purchase</li>
+      <li>Loyalty program: Earn points on every purchase</li>
+    </ul>
+  </div>
+
+  <div class="dark-mode-toggle">
+    <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+    <label for="darkModeToggle" class="toggle-label">
+      <i class="fas fa-sun"></i>
+      <i class="fas fa-moon"></i>
+    </label>
+  </div>
+
+  <div class="cannabis-background">
+    <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 0 C60 20 80 20 90 10 C80 30 80 50 90 70 C70 60 50 70 50 90 C50 70 30 60 10 70 C20 50 20 30 10 10 C20 20 40 20 50 0 Z" fill="currentColor"/>
+    </svg>
+  </div>
 
   <!-- Header Section -->
   <header class="container text-center">
-    <h1>Bussin Buds Order Form</h1>
-    <p>Fill out the form below to place your order. Please ensure all fields are completed accurately.</p>
+    <svg class="cannabis-leaf floating" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 0 C60 20 80 20 90 10 C80 30 80 50 90 70 C70 60 50 70 50 90 C50 70 30 60 10 70 C20 50 20 30 10 10 C20 20 40 20 50 0 Z"/>
+    </svg>
+    <h1 class="display-4">Bussin Buds Order Form</h1>
+    <p class="lead">Experience premium cannabis delivered right to your doorstep. Fill out the form below to place your order.</p>
   </header>
+
+  <!-- Best Selling Products -->
+  <div class="container">
+    <h2>Best Selling Products</h2>
+    <div class="row best-sellers">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="og-kush.jpg" class="card-img-top" alt="OG Kush">
+          <div class="card-body">
+            <h5 class="card-title">OG Kush</h5>
+            <p class="card-text">Our most popular strain!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="blue-dream.jpg" class="card-img-top" alt="Blue Dream">
+          <div class="card-body">
+            <h5 class="card-title">Blue Dream</h5>
+            <p class="card-text">A customer favorite!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="edibles-pack.jpg" class="card-img-top" alt="Edibles Pack">
+          <div class="card-body">
+            <h5 class="card-title">Edibles Variety Pack</h5>
+            <p class="card-text">Try our top-selling edibles!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Order Submission Form -->
   <div class="container">
     <form target="_blank" action="https://formsubmit.co/Cyberslueth@consultant.com" method="POST" enctype="multipart/form-data">
       
       <!-- Full Name, Email, and Phone -->
-      <div class="form-group">
-        <div class="form-row">
-          <div class="col">
-            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="form-floating">
+            <input type="text" name="name" class="form-control" id="floatingName" placeholder="Full Name" required>
+            <label for="floatingName"><i class="fas fa-user"></i> Full Name</label>
           </div>
-          <div class="col">
-            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+        </div>
+        <div class="col-md-4">
+          <div class="form-floating">
+            <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="Email Address" required>
+            <label for="floatingEmail"><i class="fas fa-envelope"></i> Email Address</label>
           </div>
-          <div class="col">
-            <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+        </div>
+        <div class="col-md-4">
+          <div class="form-floating">
+            <input type="tel" name="phone" class="form-control" id="floatingPhone" placeholder="Phone Number" required>
+            <label for="floatingPhone"><i class="fas fa-phone"></i> Phone Number</label>
           </div>
         </div>
       </div>
 
       <!-- Pick-up or Delivery -->
-      <div class="form-group">
-        <label>Order Type:</label><br>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="orderType" value="Pick-up" required>
-          <label class="form-check-label">Pick-up</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="orderType" value="Delivery" required>
-          <label class="form-check-label">Delivery</label>
+      <div class="mb-4">
+        <label class="form-label">Order Type:</label><br>
+        <div class="btn-group" role="group" aria-label="Order Type">
+          <input type="radio" class="btn-check" name="orderType" id="btnradio1" value="Pick-up" autocomplete="off" required>
+          <label class="btn btn-outline-primary" for="btnradio1"><i class="fas fa-store"></i> Pick-up</label>
+
+          <input type="radio" class="btn-check" name="orderType" id="btnradio2" value="Delivery" autocomplete="off" required>
+          <label class="btn btn-outline-primary" for="btnradio2"><i class="fas fa-truck"></i> Delivery</label>
         </div>
       </div>
 
       <!-- Address for Delivery (hidden until Delivery is selected) -->
-      <div class="form-group" id="deliveryAddress" style="display:none;">
-        <input type="text" name="address" class="form-control" placeholder="Delivery Address">
+      <div class="mb-4" id="deliveryAddress" style="display:none;">
+        <div class="form-floating">
+          <input type="text" name="address" class="form-control" id="floatingAddress" placeholder="Delivery Address">
+          <label for="floatingAddress"><i class="fas fa-map-marker-alt"></i> Delivery Address</label>
+        </div>
       </div>
 
       <!-- Bussin Buds Card Number -->
-      <div class="form-group">
-        <input type="text" name="bussinBudsCard" class="form-control" placeholder="Bussin Buds Card Number" required>
+      <div class="mb-4">
+        <div class="form-floating">
+          <input type="text" name="bussinBudsCard" class="form-control" id="floatingCard" placeholder="Bussin Buds Card Number" required>
+          <label for="floatingCard"><i class="fas fa-id-card"></i> Bussin Buds Card Number</label>
+        </div>
       </div>
 
       <!-- Age Verification -->
-      <div class="form-group">
+      <div class="mb-4">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="ageVerification" required>
-          <label class="form-check-label">I confirm I am 21 years of age or older.</label>
+          <input class="form-check-input" type="checkbox" name="ageVerification" id="ageCheck" required>
+          <label class="form-check-label" for="ageCheck">
+            I confirm I am 21 years of age or older.
+          </label>
         </div>
       </div>
 
       <!-- Product Selection -->
-      <div class="form-group">
-        <label>Select Product(s):</label><br>
-        <select class="form-control" name="productSelection" required>
-          <option value="flower">Cannabis Flower</option>
-          <option value="oil">Concentrates (Oils)</option>
-          <option value="edibles">Edibles</option>
-          <option value="custom">Custom Order</option>
-        </select>
+      <div class="mb-4">
+        <div class="form-floating">
+          <select class="form-select" name="productSelection" id="floatingSelect" required>
+            <option value="flower">Cannabis Flower</option>
+            <option value="oil">Concentrates (Oils)</option>
+            <option value="edibles">Edibles</option>
+            <option value="custom">Custom Order</option>
+          </select>
+          <label for="floatingSelect"><i class="fas fa-cannabis"></i> Select Product(s)</label>
+        </div>
       </div>
 
       <!-- Custom Product Entry -->
-      <div class="form-group">
-        <textarea placeholder="Custom Product Details (if any)" class="form-control" name="customProductDetails" rows="4"></textarea>
+      <div class="mb-4">
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Custom Product Details (if any)" id="floatingTextarea" name="customProductDetails" style="height: 100px"></textarea>
+          <label for="floatingTextarea"><i class="fas fa-edit"></i> Custom Product Details (if any)</label>
+        </div>
       </div>
 
       <!-- Credit Card Information -->
-      <div class="form-group">
-        <label>Payment Information:</label>
-        <input type="text" name="cardNumber" class="form-control" placeholder="Card Number" required>
-        <input type="text" name="cardExpDate" class="form-control" placeholder="Expiration Date (MM/YY)" required>
-        <input type="text" name="cardCVV" class="form-control" placeholder="CVV" required>
+      <div class="mb-4">
+        <h5><i class="fas fa-credit-card"></i> Payment Information</h5>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="text" name="cardNumber" class="form-control" id="floatingCardNumber" placeholder="Card Number" required>
+              <label for="floatingCardNumber">Card Number</label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-floating">
+              <input type="text" name="cardExpDate" class="form-control" id="floatingExpDate" placeholder="MM/YY" required>
+              <label for="floatingExpDate">Expiration Date (MM/YY)</label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-floating">
+              <input type="text" name="cardCVV" class="form-control" id="floatingCVV" placeholder="CVV" required>
+              <label for="floatingCVV">CVV</label>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- ID Upload -->
-      <div class="form-group">
-        <label for="attachment">Upload Your ID (PNG, JPEG):</label>
-        <input type="file" name="attachment" class="form-control" accept="image/png, image/jpeg" required>
+      <div class="mb-4">
+        <label for="attachment" class="form-label"><i class="fas fa-upload"></i> Upload Your ID (PNG, JPEG):</label>
+        <input type="file" name="attachment" class="form-control" id="attachment" accept="image/png, image/jpeg" required>
       </div>
 
       <!-- Hidden Fields -->
-      <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html">
-      <input type="hidden" name="_subject" value="New Order Submission!">
-      <input type="hidden" name="_cc" value="another@email.com,yetanother@email.com">
-      <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase">
+      <input type="hidden" name="_next" value="https://bussinbuds.com/thanks.html">
+      <input type="hidden" name="_subject" value="New Bussin Buds Order Submission!">
+      <input type="hidden" name="_cc" value="orders@bussinbuds.com,support@bussinbuds.com">
+      <input type="hidden" name="_blacklist" value="spammy pattern, banned term, illegal substance">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_honey" style="display:none">
-      <input type="hidden" name="_autoresponse" value="Thank you for your order! We'll get back to you soon.">
+      <input type="hidden" name="_autoresponse" value="Thank you for your Bussin Buds order! We're processing it now and will get back to you soon.">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_webhook" value="https://yourdomain.co/your-webhook">
+      <input type="hidden" name="_webhook" value="https://bussinbuds.com/order-webhook">
 
       <!-- Submit Button -->
-      <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Order</button>
+      <button type="submit" class="btn btn-primary btn-lg w-100">
+        <i class="fas fa-paper-plane"></i> Submit Order
+      </button>
     </form>
   </div>
 
   <!-- About Section -->
-  <section class="about container">
-    <h2>About Bussin Buds</h2>
-    <p>Bussin Buds is committed to providing the highest quality cannabis products. Fill out this form to place an order, and we'll ensure prompt processing and delivery.</p>
+  <section class="about container mt-5">
+    <h2><i class="fas fa-leaf"></i> About Bussin Buds</h2>
+    <p class="lead">At Bussin Buds, we're passionate about delivering premium cannabis products right to your doorstep. Our commitment to quality, variety, and customer satisfaction sets us apart in the industry. From carefully curated strains to expertly crafted edibles, we ensure that every product meets our high standards.</p>
+    <p>Fill out this form to place an order, and we'll ensure prompt processing and delivery. Your satisfaction and safety are our top priorities.</p>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2024 Bussin Buds | All rights reserved</p>
-    <p><a href="mailto:Cyberslueth@consultant.com">Contact Us</a></p>
+  <footer class="footer mt-5">
+    <div class="container">
+      <p>&copy; 2024 Bussin Buds | All rights reserved</p>
+      <p><a href="mailto:Cyberslueth@consultant.com"><i class="fas fa-envelope"></i> Contact Us</a></p>
+      <div class="mt-3">
+        <a href="https://facebook.com/bussinbuds" class="me-3"><i class="fab fa-facebook fa-lg"></i></a>
+        <a href="https://instagram.com/bussinbuds" class="me-3"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="https://twitter.com/bussinbuds"><i class="fab fa-twitter fa-lg"></i></a>
+      </div>
+    </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     // Toggle visibility of delivery address based on order type
     $("input[name='orderType']").on('change', function() {
       if ($(this).val() === 'Delivery') {
-        $('#deliveryAddress').show();
+        $('#deliveryAddress').slideDown();
       } else {
-        $('#deliveryAddress').hide();
+        $('#deliveryAddress').slideUp();
       }
     });
+
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    darkModeToggle.addEventListener('change', () => {
+      body.classList.toggle('dark-mode');
+    });
+
+    // Form validation
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+
+    // Admin window functionality
+    let clickCount = 0;
+    const adminPassword = 'Bussin420';
+
+    document.addEventListener('click', (e) => {
+      if (e.target === document.body || e.target.classList.contains('cannabis-background')) {
+        clickCount++;
+        if (clickCount === 10) {
+          const enteredPassword = prompt('Enter admin password:');
+          if (enteredPassword === adminPassword) {
+            openAdminWindow();
+          }
+          clickCount = 0;
+        }
+      }
+    });
+
+    function openAdminWindow() {
+      const adminWindow = document.createElement('div');
+      adminWindow.id = 'adminWindow';
+      adminWindow.innerHTML = `
+        <h2>Admin Controls</h2>
+        <button onclick="closeAdminWindow()">Close</button>
+        <h3>Sidebar Products</h3>
+        <ul id="adminProductList"></ul>
+        <input type="text" id="newProduct" placeholder="New product name">
+        <button onclick="addProduct()">Add Product</button>
+        <h3>Sales & Discounts</h3>
+        <ul id="adminSalesList"></ul>
+        <input type="text" id="newSale" placeholder="New sale item">
+        <button onclick="addSale()">Add Sale</button>
+        <h3>In-store Promotions</h3>
+        <ul id="adminPromoList"></ul>
+        <input type="text" id="newPromo" placeholder="New promotion">
+        <button onclick="addPromo()">Add Promotion</button>
+        <h3>Best Selling Products</h3>
+        <ul id="adminBestSellersList"></ul>
+        <input type="text" id="newBestSeller" placeholder="New best seller">
+        <button onclick="addBestSeller()">Add Best Seller</button>
+      `;
+      document.body.appendChild(adminWindow);
+      updateAdminProductList();
+      updateAdminWindow();
+    }
+
+    function closeAdminWindow() {
+      const adminWindow = document.getElementById('adminWindow');
+      if (adminWindow) {
+        adminWindow.remove();
+      }
+    }
+
+    function updateAdminProductList() {
+      const adminProductList = document.getElementById('adminProductList');
+      const productList = document.querySelector('.product-list');
+      adminProductList.innerHTML = '';
+      productList.querySelectorAll('li').forEach((product, index) => {
+        const li = document.createElement('li');
+        li.textContent = product.textContent;
+        li.innerHTML += ` <button onclick="removeProduct(${index})">Remove</button>`;
+        adminProductList.appendChild(li);
+      });
+    }
+
+    function addProduct() {
+      const newProduct = document.getElementById('newProduct').value;
+      if (newProduct) {
+        const productList = document.querySelector('.product-list');
+        const li = document.createElement('li');
+        li.textContent = newProduct;
+        productList.appendChild(li);
+        updateAdminProductList();
+        document.getElementById('newProduct').value = '';
+      }
+    }
+
+    function removeProduct(index) {
+      const productList = document.querySelector('.product-list');
+      productList.querySelectorAll('li')[index].remove();
+      updateAdminProductList();
+    }
+
+    function updateAdminWindow() {
+      const adminWindow = document.getElementById('adminWindow');
+      if (adminWindow) {
+        adminWindow.innerHTML += `
+          <h3>Sales & Discounts</h3>
+          <ul id="adminSalesList"></ul>
+          <input type="text" id="newSale" placeholder="New sale item">
+          <button onclick="addSale()">Add Sale</button>
+          <h3>In-store Promotions</h3>
+          <ul id="adminPromoList"></ul>
+          <input type="text" id="newPromo" placeholder="New promotion">
+          <button onclick="addPromo()">Add Promotion</button>
+          <h3>Best Selling Products</h3>
+          <ul id="adminBestSellersList"></ul>
+          <input type="text" id="newBestSeller" placeholder="New best seller">
+          <button onclick="addBestSeller()">Add Best Seller</button>
+        `;
+        updateAdminSalesList();
+        updateAdminPromoList();
+        updateAdminBestSellersList();
+      }
+    }
+
+    function updateAdminSalesList() {
+      const adminSalesList = document.getElementById('adminSalesList');
+      const salesList = document.querySelector('.sales-list');
+      adminSalesList.innerHTML = '';
+      salesList.querySelectorAll('li').forEach((sale, index) => {
+        const li = document.createElement('li');
+        li.textContent = sale.textContent;
+        li.innerHTML += ` <button onclick="removeSale(${index})">Remove</button>`;
+        adminSalesList.appendChild(li);
+      });
+    }
+
+    function updateAdminPromoList() {
+      const adminPromoList = document.getElementById('adminPromoList');
+      const promoList = document.querySelector('.promo-list');
+      adminPromoList.innerHTML = '';
+      promoList.querySelectorAll('li').forEach((promo, index) => {
+        const li = document.createElement('li');
+        li.textContent = promo.textContent;
+        li.innerHTML += ` <button onclick="removePromo(${index})">Remove</button>`;
+        adminPromoList.appendChild(li);
+      });
+    }
+
+    function updateAdminBestSellersList() {
+      const adminBestSellersList = document.getElementById('adminBestSellersList');
+      const bestSellers = document.querySelector('.best-sellers');
+      adminBestSellersList.innerHTML = '';
+      bestSellers.querySelectorAll('.card').forEach((card, index) => {
+        const li = document.createElement('li');
+        li.textContent = card.querySelector('.card-title').textContent;
+        li.innerHTML += ` <button onclick="removeBestSeller(${index})">Remove</button>`;
+        adminBestSellersList.appendChild(li);
+      });
+    }
+
+    function addSale() {
+      const newSale = document.getElementById('newSale').value;
+      if (newSale) {
+        const salesList = document.querySelector('.sales-list');
+        const li = document.createElement('li');
+        li.textContent = newSale;
+        salesList.appendChild(li);
+        updateAdminSalesList();
+        document.getElementById('newSale').value = '';
+      }
+    }
+
+    function removeSale(index) {
+      const salesList = document.querySelector('.sales-list');
+      salesList.querySelectorAll('li')[index].remove();
+      updateAdminSalesList();
+    }
+
+    function addPromo() {
+      const newPromo = document.getElementById('newPromo').value;
+      if (newPromo) {
+        const promoList = document.querySelector('.promo-list');
+        const li = document.createElement('li');
+        li.textContent = newPromo;
+        promoList.appendChild(li);
+        updateAdminPromoList();
+        document.getElementById('newPromo').value = '';
+      }
+    }
+
+    function removePromo(index) {
+      const promoList = document.querySelector('.promo-list');
+      promoList.querySelectorAll('li')[index].remove();
+      updateAdminPromoList();
+    }
+
+    function addBestSeller() {
+      const newBestSeller = document.getElementById('newBestSeller').value;
+      if (newBestSeller) {
+        const bestSellers = document.querySelector('.best-sellers');
+        const col = document.createElement('div');
+        col.className = 'col-md-4';
+        col.innerHTML = `
+          <div class="card">
+            <img src="placeholder.jpg" class="card-img-top" alt="${newBestSeller}">
+            <div class="card-body">
+              <h5 class="card-title">${newBestSeller}</h5>
+              <p class="card-text">New best seller!</p>
+            </div>
+          </div>
+        `;
+        bestSellers.appendChild(col);
+        updateAdminBestSellersList();
+        document.getElementById('newBestSeller').value = '';
+      }
+    }
+
+    function removeBestSeller(index) {
+      const bestSellers = document.querySelector('.best-sellers');
+      bestSellers.querySelectorAll('.col-md-4')[index].remove();
+      updateAdminBestSellersList();
+    }
   </script>
 
-</body>
-</html>
+</body></html>
