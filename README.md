@@ -1,8 +1,26 @@
 # Upfront Order Form Template
 
-This repository provides a customizable order form template for users who want to build an online submission system to collect customer orders. It’s ideal for businesses selling products like cannabis, concentrates, edibles, or other items.
+Here's a more upfront and open rewrite of the text, with added emphasis and a disclaimer:
 
 ---
+
+**IMPORTANT: DO NOT USE THIS SITE WHILE HOSTED ON GITHUB PAGES**
+
+This repository offers a customizable order form template for businesses looking to build an online system for collecting customer orders. It’s particularly useful for those selling products like cannabis, concentrates, edibles, or other items. **However, under no circumstances should you actively use this site while it is hosted on GitHub Pages.** 
+
+**GitHub Pages is NOT meant to serve as a free web-hosting platform for running an online business, e-commerce site, or any website primarily facilitating commercial transactions.** It is also prohibited from being used for sensitive transactions such as submitting passwords or credit card numbers.
+
+**Using this site while hosted here is a direct violation of GitHub's Prohibited Uses policy.**
+
+**Prohibited Uses Include:**
+- Running an online business or e-commerce store.
+- Facilitating commercial software as a service (SaaS).
+- Sending or processing sensitive information such as credit card numbers or personal passwords.
+- Engaging in get-rich-quick schemes, posting sexually explicit content, or encouraging violent or threatening behavior.
+
+**Please thoroughly research hosting options and ensure compliance with all relevant laws and terms before collecting any user information.**
+---
+going forward-->>
 
 ## Table of Contents
 
