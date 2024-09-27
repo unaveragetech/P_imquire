@@ -26,8 +26,8 @@ This repository provides a customizable order form template for users who want t
 - **Order Submissions via GitHub**: View customer order submissions directly from your GitHub repository using a backend form handling solution like FormSubmit.
 - **Third-Party Integration**: Easily integrate with third-party delivery services or payment processing platforms.
 
-- cant code no problem
-https://websim.ai/@brightrain79844418/upfront-order-form-tutorial
+- cant code, no problem.. we can solve that
+https://unaveragetech.github.io/P_imquire/builder
 ---
 
 ## Usage
