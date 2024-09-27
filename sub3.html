@@ -1,12 +1,13 @@
-<style>
+
+    <style>
       body {
-        font-family: 'Courier New', monospace;
+        font-family: Arial, sans-serif;
         line-height: 1.6;
-        color: #859fa8;
-        background-color: #000000;
+        color: #22b592;
+        background-color: #306473;
         margin: 0;
         padding: 20px;
-        font-size: 16px;
+        font-size: 20px;
       }
       .container {
         max-width: 800px;
@@ -16,14 +17,14 @@
         
       }
       h1 {
-        color: #f49ce1;
+        color: #4a4dee;
         text-align: center;
       }
       form {
-        display: grid;
-        grid-template-columns: 1fr 1fr; gap: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        animation: zoomIn 1s ease-out; animation: flip 1s ease-out; animation: shake 0.5s ease-out;
+        display: flex;
+        flex-direction: column;
+        
+        animation: slideIn 1s ease-out; animation: bounce 1s ease-out; animation: flip 1s ease-out;
       }
       label {
         margin-top: 10px;
@@ -33,15 +34,15 @@
         padding: 8px;
         border: 1px solid #ddd;
         border-bottom: ;
-        border-radius: 4px;
-        background-color: #f0f0f0;
+        border-radius: 0;
+        background-color: transparent;
       }
       button {
-        background-color: #f49ce1;
+        background-color: #4a4dee;
         color: #ffffff;
         padding: 10px;
         border: none;
-        border-radius: 50px;
+        border-radius: 4px;
         cursor: pointer;
       }
       button:hover {
@@ -49,8 +50,11 @@
       }
     </style>
     <div class="container">
-      <h1></h1>
-      <form action="https://formsubmit.co/Cyberslueth@consultant.com" method="POST">
+      <h1>built with (https://websim.ai/@brightrain79844418/upfront-order-form-tutorial)</h1>
+      <form action="https://formsubmit.co/your-cyberslueth@consultant.com" method="POST">
+        
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
         
         
           <label for="email">Email:</label>
@@ -61,25 +65,16 @@
           <input type="tel" id="phone" name="phone">
         
         
-        
-          <label for="productSelection">Product:</label>
-          <select id="productSelection" name="productSelection" required>
-            <option value="">Select a product</option>
-            <option value="flower">Cannabis Flower</option>
-            <option value="oil">Concentrates (Oils)</option>
-            <option value="edibles">Edibles</option>
-            <option value="custom">Custom Order</option>
-          </select>
-        
-        
-          <label for="quantity">Quantity:</label>
-          <input type="number" id="quantity" name="quantity" min="1" required>
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address">
         
         
         
         
-          <label for="message">Additional Comments:</label>
-          <textarea id="message" name="message"></textarea>
+          <label for="deliveryDate">Delivery Date:</label>
+          <input type="date" id="deliveryDate" name="deliveryDate" required>
+        
+        
         
         
           <label for="termsAgreement">
@@ -90,4 +85,3 @@
         <button type="submit">Submit Order</button>
       </form>
     </div>
-  
