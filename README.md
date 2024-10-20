@@ -68,6 +68,8 @@ https://unaveragetech.github.io/P_imquire/builder
 example page (no orders accepted)
 https://unaveragetech.github.io/P_imquire/
 ---
+##Jck shop page
+https://unaveragetech.github.io/P_imquire/jck
 
 ## Usage
 
